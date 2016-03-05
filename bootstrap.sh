@@ -11,6 +11,8 @@ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 apt-get update
 apt-get upgrade
 
-apt-get install -y git python solc ethereum cpp-ethereum nodejs
+apt-get install -y git python solc ethereum cpp-ethereum nodejs ntp
 
 npm install -g truffle
+
+service ntp reload
