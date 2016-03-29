@@ -13,6 +13,8 @@ apt-get upgrade
 
 apt-get install -y git python solc ethereum cpp-ethereum nodejs ntp
 
-npm install -g truffle
+git clone https://github.com/ConsenSys/truffle.git
+cd truffle
+sudo npm -g install
 
 service ntp reload
