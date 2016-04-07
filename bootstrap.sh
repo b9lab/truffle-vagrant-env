@@ -11,10 +11,17 @@ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 apt-get update
 apt-get upgrade
 
-apt-get install -y git python solc ethereum cpp-ethereum nodejs ntp
+apt-get install -y git python solc ethereum cpp-ethereum nodejs ntp build-essential
 
 git clone https://github.com/ConsenSys/truffle.git
 cd truffle
 sudo npm -g install
 
 service ntp reload
+
+# For custom build config
+npm install -g "truffle-default-builder" "ether-pudding" "rimraf" "web3" "ethereumjs-testrpc"
+
+# To get a local Web server from your build folder: 
+# php -S 0.0.0.0:8000
+apt-get install -y php5-cli
