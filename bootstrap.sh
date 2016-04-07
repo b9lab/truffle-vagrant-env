@@ -13,9 +13,17 @@ apt-get upgrade
 
 apt-get install -y git python solc ethereum cpp-ethereum nodejs ntp build-essential
 
-git clone https://github.com/ConsenSys/truffle.git
-cd truffle
-sudo npm -g install
+if [ -d "/vagrant/truffle" ];then
+        echo "Pulling & Rebasing Truffle"
+        cd /vagrant/truffle
+        git pull --rebase
+else
+        echo "Cloning Truffle"
+        cd /vagrant
+        git clone https://github.com/ConsenSys/truffle.git
+        cd /vagrant/truffle
+fi
+npm install -g
 
 service ntp reload
 
