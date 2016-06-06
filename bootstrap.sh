@@ -33,3 +33,5 @@ npm install -g "truffle-default-builder" "ether-pudding" "rimraf" "web3" "ethere
 # To get a local Web server from your build folder: 
 # php -S 0.0.0.0:8000
 apt-get install -y php5-cli
+# or python -m SimpleHTTPServer 8000
+apt-get install -y python-pip python-dev libssl-dev
