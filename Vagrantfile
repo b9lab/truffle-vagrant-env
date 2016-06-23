@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
   config.vm.define "dapps" do |dapps|
     dapps.vm.box = "ubuntu/wily64"
-    dapps.vm.synced_folder "~/DAPPS", "/home/vagrant/DAPPS", nfs: true, create: true
+    dapps.vm.synced_folder "~/DAPPS", "/home/vagrant/DAPPS", nfs: true, nfs_udp: false, create: true
     dapps.vm.network "private_network", type: "dhcp"
     dapps.vm.network :forwarded_port, guest: 8000, host: 8000
     dapps.vm.network :forwarded_port, guest: 3000, host: 3000
