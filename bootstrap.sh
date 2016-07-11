@@ -11,17 +11,17 @@ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 apt-get update
 apt-get upgrade -y
 
-apt-get install -y git python solc ethereum cpp-ethereum nodejs ntp build-essential
+apt-get install -y git python solc ethereum cpp-ethereum nodejs ntp build-essential dstat
 
 if [ -d "/vagrant/truffle" ];then
         echo "Pulling & Rebasing Truffle"
-        cd /vagrant/truffle
+        cd /home/vagrant/truffle
         git pull --rebase
 else
         echo "Cloning Truffle"
-        cd /vagrant
+        cd /home/vagrant
         git clone https://github.com/ConsenSys/truffle.git
-        cd /vagrant/truffle
+        cd /home/vagrant/truffle
 fi
 npm install -g
 
