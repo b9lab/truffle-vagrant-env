@@ -9,26 +9,19 @@ curl -sL https://deb.nodesource.com/setup_iojs_2.x | sudo -E bash -
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 
 apt-get update
-apt-get upgrade -y
+# apt-get upgrade -y
 
-apt-get install -y git python solc ethereum cpp-ethereum nodejs ntp build-essential dstat
-
-if [ -d "/vagrant/truffle" ];then
-        echo "Pulling & Rebasing Truffle"
-        cd /home/vagrant/truffle
-        git pull --rebase
-else
-        echo "Cloning Truffle"
-        cd /home/vagrant
-        git clone https://github.com/ConsenSys/truffle.git
-        cd /home/vagrant/truffle
-fi
-npm install -g
+apt-get install -y git python dstat ntp nodejs build-essential \
+	solc ethereum cpp-ethereum
 
 service ntp reload
 
 # For custom build config
-npm install -g "truffle-default-builder" "ether-pudding" "rimraf" "web3" "ethereumjs-testrpc" "q"
+npm install -g truffle@2.0.4 \
+	truffle-default-builder ether-pudding rimraf web3 \
+	ethereumjs-testrpc@2.0.9 \
+# ethereumjs-testrpc@2.1.0 is broken
+	q
 
 # To get a local Web server from your build folder: 
 # php -S 0.0.0.0:8000
