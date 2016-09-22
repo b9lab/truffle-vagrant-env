@@ -1,6 +1,7 @@
 Vagrant.configure("2") do |config|
   config.vm.define "dapps" do |dapps|
     dapps.vm.box = "ubuntu/wily64"
+    # Change from "~/DAPPS" to an existing, and non-encrypted, folder on your host if the mount fails
     dapps.vm.synced_folder "~/DAPPS", "/home/vagrant/DAPPS", nfs: true, nfs_udp: false, create: true
     dapps.vm.network "private_network", type: "dhcp"
     dapps.vm.network :forwarded_port, guest: 8000, host: 8000
@@ -27,7 +28,7 @@ Vagrant.configure("2") do |config|
         mem = `grep 'MemTotal' /proc/meminfo | sed -e 's/MemTotal://' -e 's/ kB//'`.to_i / 1024 / 4
       else # sorry Windows folks, I can't help you
         cpus = 2
-        mem = 2048
+        mem = 2560
       end
 
       v.customize ["modifyvm", :id, "--memory", mem]
