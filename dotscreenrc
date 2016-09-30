@@ -1,6 +1,5 @@
 #change the hardstatus settings to give an window list at the bottom of the
 #screen, with the time and date and with the current window highlighted
 termcapinfo xterm ti@:te@
-hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%h %l %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %D %d/%m/%y %{W}%c:%s %{g}]'
+hardstatus alwayslastline '%{= kG}[ %{G}%h %l %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %D %d/%m/%y %{W}%c:%s %{g}]'
 
