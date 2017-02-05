@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.define "dapps" do |dapps|
-    dapps.vm.box = "ubuntu/wily64"
+    dapps.vm.box = "ubuntu/trusty64"
     # Change from "~/DAPPS" to an existing, and non-encrypted, folder on your host if the mount fails
     dapps.vm.synced_folder "~/DAPPS", "/home/vagrant/DAPPS", nfs: true, nfs_udp: false, create: true
     dapps.vm.network "private_network", type: "dhcp"
