@@ -17,7 +17,7 @@ apt-get install -y git python dstat ntp nodejs build-essential \
 service ntp reload
 
 # For custom build config
-npm install -g truffle@2.1.1 \
+npm install -g truffle@3.2.1 \
 	truffle-default-builder ether-pudding rimraf web3 \
 	node-gyp ethereumjs-testrpc@3.0.3 q
 
