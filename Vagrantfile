@@ -15,18 +15,21 @@ Vagrant.configure("2") do |config|
     dapps.vm.provider "virtualbox" do |v|
       host = RbConfig::CONFIG['host_os']
 
-      # Give VM 1/5 system memory & access to all cpu cores on the host
+      # Setup hardware config, host-os specific. Your host should have at least 6GB memory
       if host =~ /darwin/
+        # mac
         cpus = `sysctl -n hw.ncpu`.to_i
         # sysctl returns Bytes and we need to convert to MB
         # mem = `sysctl -n hw.memsize`.to_i / 1024 / 1024 / 2
         mem = 3072
       elsif host =~ /linux/
+        # linux
         cpus = `nproc`.to_i
         # meminfo shows KB and we need to convert to MB
         # mem = `grep 'MemTotal' /proc/meminfo | sed -e 's/MemTotal://' -e 's/ kB//'`.to_i / 1024 / 4
         mem = 3072
-      else # sorry Windows folks, I can't help you
+      else
+        # windows
         cpus = 2
         mem = 3072
       end
