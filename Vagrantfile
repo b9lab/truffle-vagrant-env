@@ -4,7 +4,14 @@ Vagrant.configure("2") do |config|
     # Change from "~/DAPPS" to an existing, and non-encrypted, folder on your host if the mount fails
     dapps.vm.synced_folder "~/DAPPS", "/home/vagrant/DAPPS", nfs: true, nfs_udp: false, create: true
     dapps.vm.network "private_network", type: "dhcp"
+    
+    # React server
+    dapps.vm.network :forwarded_port, guest: 3000, host: 3000
+    
+    # Webpack server
     dapps.vm.network :forwarded_port, guest: 8000, host: 8000
+
+    # Eth node
     dapps.vm.network :forwarded_port, guest: 8545, host: 8545
 
     # IPFS
