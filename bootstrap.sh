@@ -17,9 +17,11 @@ apt-get install -y git python dstat ntp nodejs build-essential \
 service ntp reload
 
 # For custom build config
-npm install -g node-gyp truffle@3.4.11 \
-	truffle-default-builder ether-pudding rimraf web3@0.20.2 \
-	ethereumjs-testrpc@6.0.3 q
+npm install -g node-gyp
+npm install -g truffle@4.0.6
+npm install -g rimraf
+npm install -g web3@0.20.5
+npm install -g ganache-cli@6.0.3 q
 
 # To get a local Web server from your build folder: 
 # php -S 0.0.0.0:8000
