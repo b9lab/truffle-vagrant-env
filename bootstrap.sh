@@ -17,8 +17,8 @@ service ntp reload
 
 # For custom build config
 npm install -g node-gyp
-npm install -g truffle@4.1.13
-npm install -g ganache-cli@6.1.6
+npm install -g truffle@4.1.14
+npm install -g ganache-cli@6.2.3
 
 # To get a local Web server from your build folder: 
 # php -S 0.0.0.0:8000
