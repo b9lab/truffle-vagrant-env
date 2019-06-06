@@ -11,14 +11,14 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 apt-get update
 # apt-get upgrade -y
 
-apt-get install -y git python dstat ntp nodejs build-essential ethereum 
+apt-get install -y git python dstat ntp nodejs build-essential ethereum solc jq
 
 service ntp reload
 
 # For custom build config
 npm install -g node-gyp
-npm install -g truffle@4.1.15
-npm install -g ganache-cli@6.2.5
+npm install -g truffle@5.0.21
+npm install -g ganache-cli@6.4.3
 
 # To get a local Web server from your build folder: 
 # php -S 0.0.0.0:8000
